@@ -49,5 +49,5 @@ func Do[I Input, R Result](ctx context.Context, inputs []I, transform func(conte
 		})
 	}
 
-	return outputs, nil
+	return outputs, g.Wait()
 }
