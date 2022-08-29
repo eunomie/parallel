@@ -24,7 +24,7 @@ func TestDo(t *testing.T) {
 		}
 	)
 
-	result, err := Do[string, int](ctx, listOfThings, do)
+	result, err := Do[string, int](ctx, listOfThings, do, WithLimit(2))
 
 	assert.NilError(t, err)
 	assert.DeepEqual(t, []int{5, 5, 5, 3, 4}, result)
